@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telepathy from microphony   </title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>lucia's blog</h1>
+        <nav>
+          <a href="../index.html">← back home</a>
+        </nav>
+      </header>
+      <main>
+        <article>
+<h1>Telepathy from microphony   </h1>
+<p>
+<a href="https://stratechery.com/2024/the-gen-ai-bridge-to-the-future/">New interfaces are becoming possible</a>, a shift not unlike imperative to declarative programming. Most chores you currently do on your phone, you could do easier and better with a natural language interface.
+It's still impossible to say exactly how these interfaces will look (Siri team stops having 7 strokes a day[4] and claims the market dominance they could have in 3 months if they tried? apps add natural language interfaces one by one?). More importantly, it's hard to say how they will be rolled out.
+But it certainly will involve language, because you're hardwired for language. There's hardware for the last thing you heard and the last thing you said, you evolved for all language, especially speech.
+In this post, we reconsider ways of getting language into a (mobile) computer (=phone).
+Right now, for most people, the best option is typing on a mobile keyboard at 36 words-per-minute -- about 1/4 the rate of normal speech. Given the actually hard part of natural language interfaces is solved, this unstable equilibrium will soon collapse.
+</p>
+
+<h2>Voice   </h2>
+<p>
+Why not just pick <a href="https://wisprflow.ai/">your<a/> <a href="https://withaqua.com/">favorite</a> VC-funded[3] voice recognition startup and speak into your phone?
+For one, none of them even ship phone apps. They know you weren't going to use it, because:
+<ul>
+	<li> everyone can hear you! we call this <i>conspicuity</i>. </li>
+	<li> voice recognition still fails sometimes</li>
+	<li> everyone can hear you, failures aren't frustrating but <i>humiliating</i>
+</ul>
+Public use of an ear-mounted mic spawned the most oafish media archetype yet recorded.
+If you want to use your voice to speak into a computer with other people around, it needs to be conspicuous.
+	<figure><img src="telepathy_obnoxious.png" alt="image"><figcaption>I mean look at him</figcaption></figure>
+Even if a device made it 10x easier to use your phone, if it comes at the expense of constantly broadcasting all of that information to people around you, nobody would use it.
+</p>
+
+<h2>Wristbands   </h2>
+<p>
+Meta believes in <a href="https://www.youtube.com/watch?v=Kx_nVrEKwTE">EMG keyboard/handwriting recognition</a>, a wristband that can pick up scribbling or typing [3].
+It looks promising thus far! Personally I'm a little skeptical on handwriting recognition over phone keyboards, because I don't think the former is that much more convenient.
+You'd replace one unnatural action with another. At the same time, there's a meaningful likelihood some form of the Meta wristband will catch on.
+<figure><img src="telepathy_semgrd.png" alt="image"><figcaption>Meta's "sEMG-RD" wristband has a large public dataset of hand recognition data. Granted you can't get the wristband if you don't work at Meta and I can't see how one is at all useful wihout the other, but they get points for releasing <i>something</i>.</figcaption></figure>
+A <a href="https://www.doublepoint.com/doublepoint-kit">Finnish company</a> has an intriguing wristband with IMU-only gesture detection. They're aiming for a virtual mouse pointer plus some other gestures, I think they're selling a b2b sdk for smartwatch vendors. It's pretty sick, but not a full intent input replacement like we're going for.
+</p>
+<h2>Gaze tracking   </h2>
+<p>
+Most famously used in Apple Vision Pro, you can navigate by looking at stuff. I found the device insisting that my gaze keep still <i>infuriating</i> and inherently oppressive.
+Why would you yield your freedom to move your eyes as you please, with the natural flow of your attention? Fine addition to apple's suite of software-defined bondage devices.
+</p>
+<h2>BCI   </h2>
+<p>
+Speech recognition brain implants have impressive results (<a href="https://www.nature.com/articles/s41586-023-06377-x">23.8% WER on 125k word dictionary</a> in a patient who can no longer speak unaided) but they will not become widely adopted this century. Not because of the risk of deadly infection (which is high) or the cost (brain surgery does not scale) but longevity — even the best brain implants just <a href="https://pubmed.ncbi.nlm.nih.gov/34847547/">don't last very long</a>. Suppose a BCI leap solves all of these. Is the brain the right place to find intent? &ltepistemic status: vibes&gt Experiments seem to show there are at least <a href="https://www.nature.com/articles/483260a">two of you in there.</a> Controlling your thoughts is actually <a href="https://en.wikipedia.org/wiki/Meditation">an entire discipline</a> that takes years of training to reach moderate proficiency. Deriving intent from brain activity seems to require a reconceptualization of what you are. For the purposes of my endeavors (as well as my general conception-of-self) I prefer to think of "intent" as anything that makes it down the spinal cord, and think of the <a href="https://umami.fandom.com/wiki/Cerebral_electricity">many-faced void soup</a> above as little as possible&lt/es&gt
+</p>
+
+<h2>Voice, but different?</h2>
+<p>
+Is there an inconspicous interface that still has all the benefits of speech?
+In general, we call this Subvocal Recognition, it's done with neck microphones and SOF dudes currently use them for whisper comms. Firefighters, motorcycle riders and others who work in loud environments or with face-obstructing PPE use them as well.
+Can you use a neck microphone as a consumer device? Not really, because they are not very good.
+$300 industry-leading systems still <a href="https://www.otto-comm.com/products/throatmicrophones/throatmicrophone">lecture users about placement</a> in training material instead of using a beam-formed microphone array. I tested a couple, and have yet to find a neck mic that performs better than the affordable and convenient DJI Mic 2. As is, it seems neck microphones are a tech-underserved area.
+</p>
+
+<p>
+Can we build an even better subvocal microphone? It seems clear to everyone that this kind of tech is coming, and I think that future is ready. Facial sEMG-based silent speech recognition systems can hit 9% Word Error Rate [2] on a 2200-word dictionary, MIT Media Lab's Arnav Kapur gave a 2020 TED talk <a href="https://www.youtube.com/watch?v=TrofjEAetVs&t=249s">demoing</a> one such system. In the extreme case, these require no visible motion (subthreshold MUAPs) to recognize speech. Relaxing the "not visible at all" constraint into "not too intrusive", and you reach a technically feasible product.
+</p>
+
+<p>
+Oh there's one more trick. Researchers obviously can't use a microphone, because that would be cheating. But we're not researchers, our subvocal microphone can actually include a normal microphone! Reformulate the problem from p(word | emg) into p(audio | emg + audio), and you get something like:
+</p>
+
+<figure><img src="telepathy_inference.png" alt="Screenshot 2025-03-04 at 15.44.51"><figcaption>with EMG turned off, we still have some output</figcaption></figure>
+Viewed from this angle, it's pretty clear how to get free training data
+<figure><img src="telepathy_training.png" alt="Screenshot 2025-03-04 at 15.46.03"><figcaption>data augmentation opportunity</figcaption></figure>
+sEMG suffers from per-person variation and uneven placement problems, but remember there's already value to be unlocked without EMG!
+Whence we arrive at the plan.
+<ol>
+<li> Build a good-looking, beam-formed neck microphone. Include EMG hardware.</li>
+<li> Sell to audio enthusiasts, maybe military</li>
+<li> Train the best sEMG-to-Voice model yet made</li>
+<li> Release free update that makes the microphone 10x better</li>
+<li> Consumer-grade telepathy</li>
+</ol>
+
+
+<p>
+A <a href="https://www.reuters.com/business/aerospace-defense/anduril-talks-new-funding-round-with-possible-28-billion-valuation-sources-say-2025-02-07/">recent windfall</a> gifted me post-employment, so I've been making progress on the plan full time. If this interests you, get in touch! I can't pay you a salary yet, but I've hired talented friends as contractors before, and I'd love to meet someone equally obsessed with this problem!
+<h2>Footnotes   </h2>
+<ol>
+
+	<li><a href="https://betterdictation.com/">My personal favorite</a> is not even VC funded! Makes you think.</li>
+	<li>Can you game the Word Error Rate metric? YES! Most commonly it's gamed using a small dictionary, hence I cite dictionary sizes alongside WERs. But this is far from perfect! You can still have the subject speak too slowly, or enunciate too clearly. It's a compromise I'm unhappy with until I find a better metric. Also, if you're gonna read up on this, be on the lookout for "Session Dependent" experiments - it means they did not remove and reattach the electrodes between train and test sessions.</li>
+	<li>certainly not their only bet — Orion has a formidable microphone array</li>
+	<li>a friend close to the matter tells me this is unlikely</li>
+</p>
+</ol>
+
+<h2>References   </h2>
+<ol>
+  <li><a href="https://stratechery.com/2024/the-gen-ai-bridge-to-the-future/">https://stratechery.com/2024/the-gen-ai-bridge-to-the-future/</a></li>
+  <li><a href="https://scale.com/blog/text-universal-interface">https://scale.com/blog/text-universal-interface</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Desktop_metaphor">https://en.wikipedia.org/wiki/Desktop_metaphor</a></li>
+  <li><a href="https://dl.acm.org/doi/10.1145/3172944.3172977">https://dl.acm.org/doi/10.1145/3172944.3172977</a></li>
+  <li><a href="https://www.researchgate.net/publication/336206445_How_do_People_Type_on_Mobile_Devices_Observations_from_a_Study_with_37000_Volunteers">https://www.researchgate.net/publication/336206445_How_do_People_Type_on_Mobile_Devices_Observations_from_a_Study_with_37000_Volunteers</a></li>
+  <li><a href="https://github.com/OpenInterpreter/open-interpreter">https://github.com/OpenInterpreter/open-interpreter</a></li>
+  <li><a href="https://betterdictation.com/">https://betterdictation.com/</a></li>
+  <li><a href="https://wisprflow.ai/">https://wisprflow.ai/</a></li>
+  <li><a href="https://talonvoice.com/">https://talonvoice.com/</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Privacy#Privacy_paradox_and_economic_valuation">https://en.wikipedia.org/wiki/Privacy#Privacy_paradox_and_economic_valuation</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Value-action_gap">https://en.wikipedia.org/wiki/Value-action_gap</a></li>
+  <li><a href="https://www.nature.com/articles/s41586-023-06377-x">https://www.nature.com/articles/s41586-023-06377-x</a></li>
+  <li><a href="https://pubmed.ncbi.nlm.nih.gov/34847547/">https://pubmed.ncbi.nlm.nih.gov/34847547/</a></li>
+</ol>
+
+</article>
+      </main>
+      <footer>email: lucia3e8@gmail.com</footer>
+    </div>
+  </body>
+</html>
