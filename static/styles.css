@@ -6,40 +6,39 @@
 
 body {
   font-family: "Courier New", monospace;
-  background-color: #1a1a1a;
-  background-image: radial-gradient(
-    circle at 50% 50%,
-    #333 1px,
-    transparent 1px
-  );
-  background-size: 10px 10px;
-  color: #ffffd0;
+  background-color: #fff;
+  color: #000;
   line-height: 1.6;
   min-height: 100vh;
   padding: 2rem;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 header {
-  margin-bottom: 4rem;
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 400;
+  margin-left: -0.1em;
 }
 
 nav {
+  margin-bottom: 4rem;
   margin-bottom: 3rem;
 }
 
 nav a {
-  color: #ffffd0;
+  color: #000;
   text-decoration: none;
   margin-right: 2rem;
   transition: opacity 0.2s;
@@ -50,7 +49,7 @@ nav a:hover {
 }
 
 a {
-  color: #ffffd0;
+  color: #000;
   text-decoration: none;
   transition: opacity 0.2s;
   font-weight: bold;
@@ -87,7 +86,7 @@ figure img {
 
 figcaption {
   margin-top: 0.5rem;
-  color: #999970;
+  color: #666;
   font-size: 0.9rem;
 }
 
